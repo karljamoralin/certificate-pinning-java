@@ -50,7 +50,7 @@ class SSLPinning {
             sslContext.init(null, tmf.getTrustManagers(), null);
 
             URL url = new URL("https://certs.cac.washington.edu/CAtest/");
-            HttpsURLConnection httpsURLConnection = (HttpsURLConnection)url.openConnection();
+            HttpsURLConnection httpsURLConnection = (HttpsURLConnection) url.openConnection();
             httpsURLConnection.setSSLSocketFactory(sslContext.getSocketFactory());
             httpsURLConnection.connect();
             System.out.print("Server authentication successful");
